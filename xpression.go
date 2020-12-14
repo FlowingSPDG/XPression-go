@@ -16,8 +16,8 @@ var (
 
 // XPression Main struct to manage XPression.
 type XPression struct {
-	Addr string
-	Port uint // 7788 by default.
+	addr string
+	port uint // 7788 by default.
 	conn net.Conn // TCP Connection(pointer).
 }
 
@@ -29,8 +29,8 @@ func New(addr string, port uint) (*XPression,error) {
 	}
 	xp := &XPression{
 		conn: c,
-		Addr:addr,
-		Port:port,
+		addr:addr,
+		port:port,
 	}
 	return xp,nil
 }
