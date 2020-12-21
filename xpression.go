@@ -120,8 +120,8 @@ func (x *XPression) GPI (gpi int) error {
 	return nil
 }
 
-// LAYEROFF Takes a scene in framebuffer number buffer on layer number layer off air using the defined out transition. For example, LAYEROFF 0000:2 removes the scene on layer 2 of framebuffer 0000 (the first framebuffer).
-func (x *XPression) LAYEROFF (buffer,layer int) error {
+// LayerOff Takes a scene in framebuffer number buffer on layer number layer off air using the defined out transition. For example, LAYEROFF 0000:2 removes the scene on layer 2 of framebuffer 0000 (the first framebuffer).
+func (x *XPression) LayerOff (buffer,layer int) error {
 	cmd := fmt.Sprintf("%s %d:%d%s",COMMAND_LAYEROFF,buffer,layer,Terminate)
 	_, err := x.conn.Write([]byte(cmd))
 	if err != nil {
